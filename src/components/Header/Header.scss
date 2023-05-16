@@ -1,0 +1,74 @@
+@use '../../styles/partials/variables' as *;
+
+.nav{
+
+    margin: 1rem;
+    text-align: center;
+
+    &__logo{
+        max-height: 1.563rem;
+        max-width: 7.5rem;
+        margin-bottom: 1rem;
+
+        
+    }
+
+    &bar{
+        color: $black;
+        display: flex;
+        margin-bottom: 1rem;
+        justify-content: space-between;
+
+        &__search-icon{
+            // background: url('../../assets/images/icons/search.svg')
+            position: absolute;
+            margin: 0.7rem;
+        }
+
+        &__search{
+            height: 2.5rem;
+            width: 83%;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            padding-left: 2.2rem;
+            border: 1px solid $mercury;
+            background-color: $alabaster;
+
+            &:focus{
+                outline-color: $blue;
+            }
+
+            &::placeholder{
+                color: $darkblack;
+            }
+
+        }
+
+        &__avatar{
+            width: 2.25rem;
+            object-fit:cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__upload-icon{
+        position: absolute;
+        margin: 0.55rem;
+    }
+
+    &__upload-btn{
+        height: 2.5rem;
+        width: 100%;
+        background-color: $blue;
+        border: 0;
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.75rem;
+
+        &:hover{
+            background-color: $darkblue;
+        }
+        
+    }
+
+}
