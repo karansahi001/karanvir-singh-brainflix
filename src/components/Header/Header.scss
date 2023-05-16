@@ -12,6 +12,10 @@
         justify-content: space-between;
     }
 
+    @include desktop{
+        margin: 1rem 4.5rem 1rem 4.5rem;
+    }
+
     &__logo{
         max-height: 1.563rem;
         max-width: 7.5rem;
@@ -96,7 +100,6 @@
                 margin: 0.55rem;
         
                 @include tablet{
-                    // display: none;
                     margin-left: 2rem;
                 }
             }
@@ -117,6 +120,10 @@
                 @include tablet{
                     width: 9.375rem;
                     margin: 0 1.5rem;
+                }
+
+                @include desktop{
+                    margin: 0 1.8rem 0 1.6rem;
                 }
                 
             }
