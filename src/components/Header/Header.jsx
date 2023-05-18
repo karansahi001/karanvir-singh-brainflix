@@ -26,7 +26,6 @@ const Header = () => {
                 <img className="nav-sec__avatar--tablet" src={avatar} alt="avatar" />
               </div>
             </div>
-            
         </nav>
     </div>
   )
