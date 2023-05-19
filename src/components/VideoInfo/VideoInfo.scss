@@ -1,0 +1,58 @@
+@use '../../styles/partials/variables' as *;
+
+.v-info{
+    margin: 0 1rem;
+
+    &__head{
+        margin: 1.5rem 0 0 0;
+    }
+
+    &__divider{
+        margin: 1rem 0;
+        height: 1px;
+        background-color: $mercury;
+        border: none;
+    }
+
+    &__desc{
+        line-height: 1.37rem;
+        margin-bottom: 1rem;
+    }
+
+}
+
+.v-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.vcontain{
+
+    &__by{
+        font-weight: 600;
+    }
+
+    &__date{
+        color: $silver;
+        margin-top: 1rem;
+    }
+   
+    &__views{
+        color: $silver;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__likes{
+        @extend .vcontain__views;
+        margin-top: 1rem;
+    }
+
+    &__icons{
+        margin-right: 0.3rem;
+    }
+
+}
+
