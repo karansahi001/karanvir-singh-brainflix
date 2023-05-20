@@ -7,8 +7,8 @@
     display: flex;
 
     @include tablet {
-        margin-left: 6rem;
-        margin-right: 6rem;
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
     }
 
     @include desktop {
@@ -19,6 +19,10 @@
     &__profile {
         margin-right: 1rem;
         margin-top: 3rem;
+
+        @include tablet{
+            margin-top: 2rem;
+        }
 
         .profile__icon {
             background-color: $mercury;
@@ -43,60 +47,35 @@
             display: flex;
             flex-direction: column;
 
-            &__comment {
-                @include mobile-body-font;
-                color: $silver;
-                margin-bottom: 0.25rem;
-                margin-top: 1.5rem;
-            }
-
-            &-input__name {
-                height: 2.25rem;
-                border-radius: 0.25rem;
-                padding: 0.75rem;
-                border: 1px solid $mercury;
-                background-color: $alabaster;
-
-                @include tablet {
-                    height: 3rem;
-                    padding: 1rem;
-                }
-
-                &:focus {
-                    outline-color: $blue;
-                }
-
-                &:invalid {
-                    border: 1px solid #D22D2D;
-
-                }
-
-                &::placeholder {
-                    color: $black;
-                }
-            }
-
-            &-input__comment {
-                @extend .form-input__name;
-                height: 6rem;
-                resize: none;
+            @include tablet{
+                flex-direction: row;
+                align-items: flex-end;
             }
 
             &-button {
                 text-align: right;
+               
+                @include tablet{
+                    width: 15rem;
+                }
 
                 &__submit {
+                    height: 2.5rem;
                     width: 100%;
                     margin: 1rem 0 0 0;
                     padding: 0.75rem 2rem;
                     background-color: $blue;
                     color: white;
-                    font-size: 1.04rem;
+                    font-size: $body-font-mobile;
                     border-radius: 0.25rem;
                     border: 0;
 
                     @include tablet {
-                        width: 9.375rem;
+                        font-size: $body-font-tablet;
+                        // width: 9.675rem;
+                        
+                        margin-top: 1.5rem;
+                        padding: 0.7rem 2.5rem 1rem 2.5rem;
                     }
 
                     &:hover {
@@ -109,8 +88,58 @@
     }
 }
 
+.form-area{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet{
+        margin-right: 1.5rem;
+    }
+
+    &__comment {
+        @include mobile-body-font;
+        color: $silver;
+        margin-bottom: 0.25rem;
+        margin-top: 1rem;
+    }
+
+    &-input__comment {
+        height: 6rem;
+        resize: none;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        border: 1px solid $mercury;
+        background-color: $alabaster;
+
+        @include tablet {
+            height: 2.5rem;
+            padding: 0.67rem 0.875rem 0.875rem 0.875rem;
+        }
+
+        &:focus {
+            outline-color: $blue;
+        }
+
+        &:invalid {
+            border: 1px solid #D22D2D;
+
+        }
+
+        &::placeholder {
+            color: $black;
+        }
+    }
+}
+
 .btn__icon{
-    // margin-right: 1rem;
     position: absolute;
-    left: 5rem;
+    margin-left: 0.8rem;
+    margin-top: 1.5rem;
+
+    @include tablet{
+        margin-left: 0.5rem;
+        margin-top: 2rem;
+    }
 }

@@ -11,13 +11,15 @@ const CommentForm = () => {
                 </div>
                 <div className="comments-sec__form">
                     <form className="form" onSubmit={(e) => e.preventDefault()}>
-                        <label className="form__comment" forHTML="comment">JOIN THE CONVERSATION</label>
-                        <textarea className="form-input__comment" name="comment" id="comment" cols="30" rows="10" placeholder="Add a new comment"></textarea>
+                        <div className="form-area">
+                            <label className="form-area__comment" forHTML="comment">JOIN THE CONVERSATION</label>
+                            <textarea className="form-area-input__comment" name="comment" id="comment" cols="30" rows="10" placeholder="Add a new comment"></textarea>
+                        </div>
                         <div className="form-button">
-                            <button type="submit" className="form-button__submit">
-                               <i className="btn__icon">
+                            <i className="btn__icon">
                                 <img src={commentIcon} alt="add comment" />
-                               </i>
+                            </i>
+                            <button type="submit" className="form-button__submit">
                                 COMMENT
                             </button>
                         </div>
