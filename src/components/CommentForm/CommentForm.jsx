@@ -4,7 +4,7 @@ import avatar from '../../assets/images/Mohan-muruge.jpg'
 
 const CommentForm = () => {
     return (
-        <div classNameName="comment-form">
+        <div className="comment-form">
             <div className="comments-sec">
                 <div className="comments-sec__profile">
                     <img className="profile__icon" src={avatar} alt="form profile avatar" />
@@ -12,7 +12,7 @@ const CommentForm = () => {
                 <div className="comments-sec__form">
                     <form className="form" onSubmit={(e) => e.preventDefault()}>
                         <div className="form-area">
-                            <label className="form-area__comment" forHTML="comment">JOIN THE CONVERSATION</label>
+                            <label className="form-area__comment" forhtml="comment">JOIN THE CONVERSATION</label>
                             <textarea className="form-area-input__comment" name="comment" id="comment" cols="30" rows="10" placeholder="Add a new comment"></textarea>
                         </div>
                         <div className="form-button">

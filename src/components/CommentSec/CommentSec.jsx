@@ -11,6 +11,7 @@ const CommentSec = ({ videoDetails }) => {
             videoDetails.comments.map((comment) => {
                 return (
                     <Comment 
+                        key={ comment.id }
                         name={ comment.name } 
                         timestamp={ comment.timestamp } 
                         description={ comment.comment } 

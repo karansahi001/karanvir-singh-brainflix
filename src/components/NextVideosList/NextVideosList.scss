@@ -1,0 +1,13 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.videos-list{
+    margin: 1rem;
+
+    &__head{
+        color: $silver;
+        font-size: $sub-head-font-mobile;
+        -webkit-text-stroke-width: 0.8px;
+        -webkit-text-stroke-color: $silver;
+    }
+}

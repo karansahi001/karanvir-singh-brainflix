@@ -78,6 +78,7 @@
         &__avatar{
             width: 2.25rem;
             object-fit:cover;
+            object-position: 20% 80%;
             border-radius: 50%;
 
             @include tablet{

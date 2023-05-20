@@ -1,0 +1,34 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.next-video{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.next-left{
+    margin-right: 1rem;
+    &__image{
+        width: 7.7rem;
+        height: 4.4rem;
+        object-fit: cover;
+        object-position: 20% 30%;
+        background-color: $mercury;
+        border-radius: 0.25rem;
+        border: 0;
+    }
+
+}
+
+.next-right{
+    @include mobile-body-font;
+
+    &__title{
+        @include sub-head-mobile;
+    }
+
+    &__name{
+        margin-top: 1rem;
+    }
+
+}
