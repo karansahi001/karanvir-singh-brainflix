@@ -112,6 +112,8 @@
                 border-radius: 0.25rem;
                 color: white;
                 padding: 0.75rem;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: white;
         
                 &:hover{
                     background-color: $darkblue;
