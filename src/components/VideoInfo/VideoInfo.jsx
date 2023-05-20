@@ -3,10 +3,18 @@ import likesIcon from '../../assets/images/icons/likes.svg'
 import './VideoInfo.scss'
 
 
-const VideoInfo = ({ videoDetails }) => {
+export const dateFormat = (timestamp) => {
+    const date = new Date(timestamp);
+   return(
+       `${((date.getMonth()+1) < 10 
+       ? `0${date.getMonth()+1}`
+       : (date.getMonth()+1))}/${(date.getDate() < 10 
+           ? `0${date.getDate()}`
+           : date.getDate())}/${date.getFullYear()}`
+   )
+}
 
-    const date = new Date(videoDetails.timestamp);
-    const dateFormat = `${((date.getMonth()+1) < 10 ? `0${date.getMonth()+1}`: (date.getMonth()+1))}/${(date.getDate() < 10 ? `0${date.getDate()}`: date.getDate())}/${date.getFullYear()}`
+const VideoInfo = ({ videoDetails }) => {
 
   return (
     <section className="v-info">
@@ -15,7 +23,7 @@ const VideoInfo = ({ videoDetails }) => {
         <div className="v-container">
             <div className="vcontain">
                 <p className="vcontain__by">By {videoDetails.channel}</p>
-                <p className="vcontain__date">{dateFormat}</p>
+                <p className="vcontain__date">{dateFormat(videoDetails.timestamp)}</p>
             </div>
             <div className="vcontain">
                 <p className="vcontain__views">

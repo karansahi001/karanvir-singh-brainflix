@@ -1,4 +1,3 @@
-import React from 'react'
 import './Header.scss'
 import logo from '../../assets/images/logo/BrainFlix-logo.svg'
 import upload from '../../assets/images/icons/upload.svg'

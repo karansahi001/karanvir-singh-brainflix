@@ -1,0 +1,11 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.comment-sec{
+
+    &__count{
+        font-weight: 700;
+        margin: 1rem;
+        @include sub-head-mobile;
+    }
+}

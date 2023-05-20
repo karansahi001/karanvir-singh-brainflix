@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 @mixin tablet {
     @media (min-width: 768px) {
         @content;
@@ -8,4 +10,42 @@
     @media (min-width: 1280px) {
         @content;
     }
+}
+
+@mixin mobile-body-font{
+    font-size: $body-font-mobile;
+    line-height: $body-line-height-mobile;
+}
+
+@mixin tablet-body-font{
+    font-size: $body-font-tablet;
+    line-height: $body-line-height-tablet;
+}
+
+@mixin head-font-mobile{
+    font-size: $head-font-mobile;
+}
+
+@mixin head-font-tablet{
+    font-size: $head-font-tablet;
+}
+
+@mixin sec-head-mobile{
+    font-size: $sec-head-font-mobile;
+    font-weight: 700;
+}
+
+@mixin sub-head-mobile{
+    font-size: $sub-head-font-mobile;
+    font-weight: 700;
+}
+
+@mixin sec-head-tablet{
+    font-size: $sec-head-font-tablet;
+    font-weight: 700;
+}
+
+@mixin sub-head-tablet{
+    font-size: $sub-head-font-tablet;
+    font-weight: 700;
 }

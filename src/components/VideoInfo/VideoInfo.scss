@@ -7,10 +7,10 @@
 
     &__head{
         margin: 1.5rem 0 0 0;
-        font-size: 1.5rem;
+        @include head-font-mobile;
 
         @include tablet{
-            font-size: 2.063rem;
+            @include head-font-tablet;
         }
     }
 
@@ -22,13 +22,11 @@
     }
 
     &__desc{
-        line-height: 1.125rem;
         margin-bottom: 1rem;
-        font-size: 0.813rem;
+        @include mobile-body-font;
 
         @include tablet{
-            font-size: 0.875rem;
-            line-height: 1.375rem;
+            @include tablet-body-font;
         }
     }
 
@@ -53,15 +51,15 @@
 
 .vcontain{
 
-    font-size: 0.813rem;
+    font-size: $body-font-mobile;
 
     @include tablet{
         display: flex;
-        font-size: 0.875rem;
+        font-size: $body-font-tablet;
     }
 
     &__by{
-        font-weight: 600;
+        font-weight: 700;
 
         @include tablet{
             margin-right: 1.5rem;

@@ -1,0 +1,55 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+
+.comment {
+    border-top: 1px solid $mercury;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    color: $black;
+    display: flex;
+    @include mobile-body-font;
+
+    .comment-left {
+        &__icon {
+            background-color: $mercury;
+            object-fit: cover;
+            height: 2.25rem;
+            width: 2.25rem;
+            border-radius: 50%;
+            display: inline-block;
+
+            @include tablet {
+                height: 3rem;
+                width: 3rem;
+            }
+
+        }
+    }
+
+    .comment-right {
+        display: block;
+        margin: 0 1rem;
+        width: 100%;
+
+        &-sub {
+            display: flex;
+            margin-bottom: 0.7rem;
+            justify-content: space-between;
+
+            &__name {
+                font-weight: 600;
+            }
+
+            &__date {
+                color: $silver;
+            }
+        }
+        
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $mercury;
+    }
+}
