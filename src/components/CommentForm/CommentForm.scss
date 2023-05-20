@@ -1,0 +1,116 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.comments-sec {
+    margin: 0 1rem 1rem 1rem;
+    display: flex;
+
+    @include tablet {
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+
+    @include desktop {
+        margin-left: 22rem;
+        margin-right: 22rem;
+    }
+
+    &__profile {
+        margin-right: 1rem;
+        margin-top: 3rem;
+
+        .profile__icon {
+            background-color: $mercury;
+            object-fit: cover;
+            height: 2.25rem;
+            width: 2.25rem;
+            border-radius: 50%;
+            display: inline-block;
+
+            @include tablet {
+                height: 3rem;
+                width: 3rem;
+            }
+
+        }
+    }
+
+    &__form {
+        width: 100%;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+
+            &__comment {
+                @include mobile-body-font;
+                color: $silver;
+                margin-bottom: 0.25rem;
+                margin-top: 1.5rem;
+            }
+
+            &-input__name {
+                height: 2.25rem;
+                border-radius: 0.25rem;
+                padding: 0.75rem;
+                border: 1px solid $mercury;
+                background-color: $alabaster;
+
+                @include tablet {
+                    height: 3rem;
+                    padding: 1rem;
+                }
+
+                &:focus {
+                    outline-color: $blue;
+                }
+
+                &:invalid {
+                    border: 1px solid #D22D2D;
+
+                }
+
+                &::placeholder {
+                    color: $black;
+                }
+            }
+
+            &-input__comment {
+                @extend .form-input__name;
+                height: 6rem;
+                resize: none;
+            }
+
+            &-button {
+                text-align: right;
+
+                &__submit {
+                    width: 100%;
+                    margin: 1rem 0 0 0;
+                    padding: 0.75rem 2rem;
+                    background-color: $blue;
+                    color: white;
+                    font-size: 1.04rem;
+                    border-radius: 0.25rem;
+                    border: 0;
+
+                    @include tablet {
+                        width: 9.375rem;
+                    }
+
+                    &:hover {
+                        background-color: $darkblue;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn__icon{
+    // margin-right: 1rem;
+    position: absolute;
+    left: 5rem;
+}
