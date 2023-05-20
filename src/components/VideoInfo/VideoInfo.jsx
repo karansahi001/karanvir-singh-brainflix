@@ -11,7 +11,7 @@ const VideoInfo = ({ videoDetails }) => {
   return (
     <section className="v-info">
         <h1 className="v-info__head">{videoDetails.title}</h1>
-        <hr className="v-info__divider" />
+        <hr className="v-info__divider mobile-divider" />
         <div className="v-container">
             <div className="vcontain">
                 <p className="vcontain__by">By {videoDetails.channel}</p>
