@@ -11,6 +11,12 @@
     display: flex;
     @include mobile-body-font;
 
+    @include tablet{
+        margin: 0 2.25rem;
+        padding: 1.5rem 0;
+        @include tablet-body-font;
+    }
+
     .comment-left {
         &__icon {
             background-color: $mercury;
@@ -46,7 +52,7 @@
                 color: $silver;
             }
         }
-        
+
     }
 
     &:last-child {

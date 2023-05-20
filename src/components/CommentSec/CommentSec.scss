@@ -2,10 +2,16 @@
 @use '../../styles/partials/variables' as *;
 
 .comment-sec{
+    
 
     &__count{
         font-weight: 700;
         margin: 1rem;
         @include sub-head-mobile;
+
+        @include tablet{
+            margin: 0 0 1.5rem 2.25rem;
+            @include sub-head-tablet;
+        }
     }
 }
