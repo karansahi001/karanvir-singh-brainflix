@@ -4,6 +4,7 @@
 .next-video{
     display: flex;
     margin: 1rem 0;
+
 }
 
 .next-left{
@@ -22,13 +23,29 @@
 
 .next-right{
     @include mobile-body-font;
+    max-width: 10rem;
+
+    @include tablet{
+        @include tablet-body-font;
+        width: 10rem;
+    }
 
     &__title{
         @include sub-head-mobile;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+       
     }
 
     &__name{
         margin-top: 1rem;
+
+        @include tablet{
+            margin-top: 0.45rem;
+        }
     }
 
 }
