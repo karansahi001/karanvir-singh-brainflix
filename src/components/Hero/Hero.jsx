@@ -5,7 +5,6 @@ import VideoInfo from "../VideoInfo/VideoInfo"
 const Hero = ({ videoDetails }) => {
   return (
     <>
-        <Video videoDetails={videoDetails} />
         <VideoInfo videoDetails={videoDetails} />
     </>
   )

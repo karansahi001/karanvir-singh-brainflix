@@ -9,6 +9,10 @@
         margin: 0 2.25rem;
     }
 
+    @include desktop{
+        margin: 0 0 0 2.25rem;
+    }
+
     &__head{
         margin: 1.5rem 0 0 0;
         @include head-font-mobile;
@@ -28,6 +32,10 @@
         @include tablet{
             margin: 1.5rem 0;
         }
+
+        @include desktop{
+            margin-top: 1rem;
+        }
     }
 
     &__desc{
@@ -37,6 +45,10 @@
         @include tablet{
             margin-bottom: 2.25rem;
             @include tablet-body-font;
+        }
+
+        @include desktop{
+            margin-right: 1.5rem;
         }
     }
 

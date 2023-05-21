@@ -18,5 +18,9 @@
             margin: 2.25rem 0;
             font-size: $sec-head-font-tablet;
         }
+
+        @include desktop{
+            margin-bottom: 1.5rem;
+        }
     }
 }
