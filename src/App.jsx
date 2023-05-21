@@ -6,13 +6,15 @@ import Hero from './components/Hero/Hero';
 import CommentSec from './components/CommentSec/CommentSec';
 import NextVideosList from './components/NextVideosList/NextVideosList';
 import Video from './components/Video/Video';
+import { useState } from 'react';
 
 function App() {
+  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0])
 
   return (
     <>
       <Header />
-      <Video videoDetails={videoDetails[0]} />
+      <Video videoDetails={selectedVideo} />
       <div className="main">
         <section className="main__left">
           <Hero videoDetails={videoDetails[0]} />
