@@ -10,8 +10,7 @@ import { useState } from 'react';
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-  const [videosList, setVideosList] = useState(videos);
-
+  const [videosList, setVideosList] = useState(videos.slice(1));
 
   return (
     <>
@@ -27,6 +26,7 @@ function App() {
             selectedVideo = { selectedVideo }
             setSelectedVideo = { setSelectedVideo } 
             videosList = { videosList } 
+            setVideosList = { setVideosList }
             videoDetails = { videoDetails }
             />
         </section>
