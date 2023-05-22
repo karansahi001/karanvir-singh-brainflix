@@ -1,11 +1,10 @@
-import Video from "../Video/Video"
 import VideoInfo from "../VideoInfo/VideoInfo"
 
 
-const Hero = ({ videoDetails }) => {
+const Hero = ({ selectedVideo }) => {
   return (
     <>
-        <VideoInfo videoDetails={videoDetails} />
+        <VideoInfo selectedVideo={ selectedVideo } />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import VideoCard from '../VideoCard/VideoCard';
 import './NextVideosList.scss';
 
-const NextVideosList = ({ videoDetails, selectedVideo, setSelectedVideo, videosList, setVideosList }) => {
+const NextVideosList = ({ videoDetails, setSelectedVideo, videosList, setVideosList }) => {
 
   const handleClick = (videoId) => {
     const selected = videoDetails.find((video) => video.id === videoId)

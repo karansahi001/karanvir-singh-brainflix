@@ -15,15 +15,14 @@ function App() {
   return (
     <>
       <Header />
-      <Video videoDetails = { selectedVideo } />
+      <Video selectedVideo = { selectedVideo } />
       <div className="main">
         <section className="main__left">
-          <Hero videoDetails = { selectedVideo } />
-          <CommentSec videoDetails = { selectedVideo } />
+          <Hero selectedVideo = { selectedVideo } />
+          <CommentSec selectedVideo = { selectedVideo } />
         </section>
         <section className="main__right">
           <NextVideosList 
-            selectedVideo = { selectedVideo }
             setSelectedVideo = { setSelectedVideo } 
             videosList = { videosList } 
             setVideosList = { setVideosList }

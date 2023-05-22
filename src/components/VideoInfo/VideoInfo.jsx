@@ -14,30 +14,30 @@ export const dateFormat = (timestamp) => {
    )
 }
 
-const VideoInfo = ({ videoDetails }) => {
+const VideoInfo = ({ selectedVideo }) => {
 
   return (
     <section className="v-info">
-        <h1 className="v-info__head">{videoDetails.title}</h1>
+        <h1 className="v-info__head">{selectedVideo.title}</h1>
         <hr className="v-info__divider mobile-divider" />
         <div className="v-container">
             <div className="vcontain">
-                <p className="vcontain__by">By {videoDetails.channel}</p>
-                <p className="vcontain__date">{dateFormat(videoDetails.timestamp)}</p>
+                <p className="vcontain__by">By {selectedVideo.channel}</p>
+                <p className="vcontain__date">{dateFormat(selectedVideo.timestamp)}</p>
             </div>
             <div className="vcontain">
                 <p className="vcontain__views">
                     <img className="vcontain__icons" src={viewsIcon} alt="views eye icon" />
-                    {videoDetails.views}
+                    {selectedVideo.views}
                 </p>
                 <p className="vcontain__likes">
                     <img className="vcontain__icons" src={likesIcon} alt="likes heart icon" />
-                    {videoDetails.likes}
+                    {selectedVideo.likes}
                 </p>
             </div>
         </div>
         <hr className="v-info__divider" />
-        <p className="v-info__desc"> {videoDetails.description} </p>
+        <p className="v-info__desc"> {selectedVideo.description} </p>
     </section>
   )
 }
