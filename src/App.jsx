@@ -9,19 +9,26 @@ import Video from './components/Video/Video';
 import { useState } from 'react';
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0])
+  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+  const [videosList, setVideosList] = useState(videos);
+
 
   return (
     <>
       <Header />
-      <Video videoDetails={selectedVideo} />
+      <Video videoDetails = { selectedVideo } />
       <div className="main">
         <section className="main__left">
-          <Hero videoDetails={videoDetails[0]} />
-          <CommentSec videoDetails={videoDetails[0]} />
+          <Hero videoDetails = { selectedVideo } />
+          <CommentSec videoDetails = { selectedVideo } />
         </section>
         <section className="main__right">
-          <NextVideosList videos={videos} />
+          <NextVideosList 
+            selectedVideo = { selectedVideo }
+            setSelectedVideo = { setSelectedVideo } 
+            videosList = { videosList } 
+            videoDetails = { videoDetails }
+            />
         </section>
       </div>
     </>
