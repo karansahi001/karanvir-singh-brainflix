@@ -13,4 +13,9 @@
             @include sub-head-tablet;
         }
     }
+
+    @include desktop{
+        margin-bottom: 4rem;
+    }
 }
+
