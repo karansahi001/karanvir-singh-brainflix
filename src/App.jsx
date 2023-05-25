@@ -1,35 +1,20 @@
 import './App.scss';
-import Header from './components/Header/Header';
-import videos from './data/videos.json';
-import videoDetails from './data/video-details.json';
-import Hero from './components/Hero/Hero';
-import CommentSec from './components/CommentSec/CommentSec';
-import NextVideosList from './components/NextVideosList/NextVideosList';
-import Video from './components/Video/Video';
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
+import Upload from './pages/Upload/Upload';
+import SingleVideo from './pages/SingleVideo/SingleVideo';
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-  const [videosList, setVideosList] = useState(videos.slice(1));
 
   return (
     <>
-      <Header />
-      <Video selectedVideo = { selectedVideo } />
-      <div className="main">
-        <section className="main__left">
-          <Hero selectedVideo = { selectedVideo } />
-          <CommentSec selectedVideo = { selectedVideo } />
-        </section>
-        <section className="main__right">
-          <NextVideosList 
-            setSelectedVideo = { setSelectedVideo } 
-            videosList = { videosList } 
-            setVideosList = { setVideosList }
-            videoDetails = { videoDetails }
-            />
-        </section>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path= "/" element={ <Homepage /> }></Route>
+          <Route path= "/upload" element={ <Upload /> }></Route>
+          <Route path= "/:video" element={ <SingleVideo /> }></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,0 +1,12 @@
+.main{
+    @include desktop{
+        display: flex;
+        margin: 0 8rem;
+    }
+
+    &__left{
+        @include desktop {
+            border-right: 1px solid $mercury;
+        }
+    }
+}
