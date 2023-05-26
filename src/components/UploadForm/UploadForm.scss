@@ -1,0 +1,102 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload-form {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &__labels {
+        font-size: 0.625rem;
+        color: $silver;
+        margin-bottom: 0.25rem;
+        font-weight: bold;
+
+        &:last-of-type {
+            margin-top: 1rem;
+        }
+    }
+
+    &__title {
+        @include mobile-body-font;
+        height: 2.25rem;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        border: 1px solid $mercury;
+        background-color: $alabaster;
+
+        &:focus {
+            outline-color: $blue;
+        }
+
+        &::placeholder {
+            color: $darkblack;
+        }
+    }
+
+    &__desc {
+        @include mobile-body-font;
+        height: 6rem;
+        resize: none;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        border: 1px solid $mercury;
+        background-color: $alabaster;
+
+        &:focus {
+            outline-color: $blue;
+        }
+
+        &::placeholder {
+            color: $darkblack;
+        }
+    }
+
+}
+
+.upload-btns {
+    text-align: center;
+
+    &__publish-icon {
+        position: absolute;
+        margin: 2rem 0 0 1rem;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+    }
+
+    &__publish {
+        font-size: $sub-head-font-mobile;
+        margin: 1.5rem 0 1rem 0;
+        height: 2.5rem;
+        width: 100%;
+        background-color: $blue;
+        border: 0;
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.75rem;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+
+        &:hover {
+            background-color: $darkblue;
+        }
+
+        @include tablet {
+            width: 9.375rem;
+            margin: 0 1.5rem;
+        }
+
+        @include desktop {
+            margin: 0 1.8rem 0 1.6rem;
+        }
+    }
+
+    &__cancel{
+        font-size: $sub-head-font-mobile;
+        margin: 1rem 0 2rem 0;
+        font-weight: bold;
+        color: $blue;
+    }
+}

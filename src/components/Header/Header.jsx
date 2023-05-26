@@ -6,7 +6,7 @@ import avatar from '../../assets/images/Mohan-muruge.jpg'
 
 const Header = () => {
   return (
-    <div>
+    <header>
         <nav className="nav">
             <img className="nav__logo" src={logo} alt="brainflix logo" />
             <div className="navbar">
@@ -26,7 +26,7 @@ const Header = () => {
               </div>
             </div>
         </nav>
-    </div>
+    </header>
   )
 }
 
