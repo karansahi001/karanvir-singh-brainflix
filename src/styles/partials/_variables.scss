@@ -1,15 +1,15 @@
-// @import url('../../assets/font/AvenirNextLTPro-Regular.otf');
-// @import url('../../assets/font/AvenirNextLTPro-Bold.otf');
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('../../assets/font/AvenirNextLTPro-Regular.otf');
+    src: url('../../assets/font/AvenirNextLTPro-Regular.otf') format('opentype'),
+         url("../../assets/font/additional-font/AvenirNextLTPro.ttf")format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('../../assets/font/AvenirNextLTPro-Bold.otf');
+    src: url('../../assets/font/AvenirNextLTPro-Bold.otf') format('opentype'), 
+         url("../../assets/font/additional-font/AvenirNextLTProBold.ttf")format("truetype");
     font-weight: 700;
 }
 
@@ -22,7 +22,7 @@ $darkblue: #0065AD;
 $mercury: #E1E1E1;
 $alabaster: #FAFAFA;
 
-$font-regular: 'Avenir Next', 'Arial';
+$font-regular: 'Avenir Next LT Pro', 'Arial';
 
 $body-font-mobile: 0.813rem;
 $body-line-height-mobile: 1.125rem;

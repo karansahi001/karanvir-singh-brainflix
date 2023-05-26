@@ -1,4 +1,3 @@
-import Header from '../../components/Header/Header';
 import videos from '../../data/videos.json';
 import videoDetails from '../../data/video-details.json';
 import Hero from '../../components/Hero/Hero';
@@ -14,7 +13,6 @@ const Homepage = () => {
 
     return (
         <>
-            <Header />
             <Video selectedVideo={selectedVideo} />
             <div className="main">
                 <section className="main__left">

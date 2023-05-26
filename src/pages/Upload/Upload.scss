@@ -1,0 +1,24 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *; 
+
+.upload-hero{
+    margin: 1rem;
+    
+    &__head{
+        margin: 1.5rem 0 1rem 0;
+        @include head-font-mobile;
+    }
+
+    &__label{
+        @include mobile-body-font;
+        color: $silver;
+        margin-bottom: 0.25rem;
+    }
+
+    &__img{
+        width: 100%;
+        background-color: $mercury;
+        border-radius: 0.25rem;
+        border: 0;
+    }
+}
