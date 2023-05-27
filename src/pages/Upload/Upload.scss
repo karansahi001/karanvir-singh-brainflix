@@ -139,6 +139,8 @@ header {
         margin: 1rem 0 2rem 0;
         font-weight: bold;
         color: $blue;
+        text-decoration: none;
+        cursor: pointer;
 
         @include tablet {
             margin: 0 2.25rem 0 0;

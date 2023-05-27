@@ -2,6 +2,7 @@ import uploadImage from '../../assets/images/Upload-video-preview.jpg';
 import UploadForm from '../../components/UploadForm/UploadForm';
 import publish from '../../assets/images/icons/publish.svg'
 import './Upload.scss'
+import { NavLink } from 'react-router-dom';
 
 const Upload = () => {
 
@@ -30,7 +31,11 @@ const Upload = () => {
             <img src={publish} alt="upload" />
           </i>
           <button form="form-upload" type="submit" className="upload-btns__publish">PUBLISH</button>
-          <p className="upload-btns__cancel">CANCEL</p>
+          <NavLink className="upload-btns__cancel" to="/">
+            <p className="upload-btns__cancel" >
+              CANCEL
+            </p>
+          </NavLink>
         </footer>
       </main>
     </>
