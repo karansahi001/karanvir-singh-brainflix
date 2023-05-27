@@ -7,7 +7,10 @@ const Upload = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    alert("Upload Complete")
+    alert(`Upload complete
+          Title: ${e.target.title.value}
+          Description: ${e.target.desc.value}`
+          )
     window.location.href = "/";
   }
 
@@ -20,13 +23,13 @@ const Upload = () => {
             <p className="upload-hero__label">VIDEO THUMBNAIL</p>
             <img className="upload-hero__img" src={uploadImage} alt="Upload video preview" />
           </section>
-          <UploadForm />
+          <UploadForm handleSubmit = {handleClick} />
         </section>
         <footer className="upload-btns">
           <i className="upload-btns__publish-icon">
             <img src={publish} alt="upload" />
           </i>
-          <button onClick={handleClick} type="submit" className="upload-btns__publish">PUBLISH</button>
+          <button form="form-upload" type="submit" className="upload-btns__publish">PUBLISH</button>
           <p className="upload-btns__cancel">CANCEL</p>
         </footer>
       </main>

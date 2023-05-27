@@ -1,9 +1,9 @@
 import './UploadForm.scss';
 
-const UploadForm = () => {
+const UploadForm = ({ handleSubmit }) => {
 
   return (
-    <form className="upload-form">
+    <form id="form-upload" className="upload-form" onSubmit={handleSubmit}>
       <label className="upload-form__labels" htmlFor="title">TITLE YOUR VIDEO</label>
       <input
         className="upload-form__title"
