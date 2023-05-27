@@ -6,6 +6,14 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet{
+        margin: -1rem 2.25rem 2rem 2.25rem;
+    }
+
+    @include desktop{
+        width: 100%;
+    }
+
     &__labels {
         font-size: 0.625rem;
         color: $silver;
@@ -14,6 +22,10 @@
 
         &:last-of-type {
             margin-top: 1rem;
+        }
+
+        @include tablet{
+            font-size: $label-tablet;
         }
     }
 
@@ -31,6 +43,12 @@
 
         &::placeholder {
             color: $darkblack;
+        }
+
+        @include tablet{
+            @include tablet-body-font;
+            height: 2.5rem;
+            padding: 1rem;
         }
     }
 
@@ -50,6 +68,11 @@
         &::placeholder {
             color: $darkblack;
         }
+
+        @include tablet{
+            @include tablet-body-font;
+            padding-left: 1rem;
+        }
     }
 
 }
@@ -57,12 +80,21 @@
 .upload-btns {
     text-align: center;
 
+    @include tablet{
+        border-top: 1px solid $mercury;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
     &__publish-icon {
         position: absolute;
         margin: 2rem 0 0 1rem;
 
-        @include tablet {
-            margin-left: 2rem;
+        @include tablet{
+            margin: 0.2rem 7.8rem 0 0;
         }
     }
 
@@ -84,8 +116,9 @@
         }
 
         @include tablet {
-            width: 9.375rem;
-            margin: 0 1.5rem;
+            width: 10rem;
+            padding: 0 2rem;
+            margin: 0 0 0 1.5rem;
         }
 
         @include desktop {
@@ -98,5 +131,9 @@
         margin: 1rem 0 2rem 0;
         font-weight: bold;
         color: $blue;
+
+        @include tablet{
+            margin: 0 2.25rem 0 0;
+        }
     }
 }

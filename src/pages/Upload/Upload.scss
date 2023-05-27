@@ -1,25 +1,52 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *; 
 
-.upload-hero{
-    margin: 1rem;
+header{ 
+    border-bottom: 1px solid $mercury;
+}
+
+.upload{
+    display: flex;
+    justify-content: space-between;
+    &-hero{
+        margin: 1rem;
     
-    &__head{
-        margin: 1.5rem 0 1rem 0;
-        @include head-font-mobile;
-    }
-
-    &__label{
-        font-size: 0.625rem;
-        font-weight: bold;
-        color: $silver;
-        margin-bottom: 0.25rem;
-    }
-
-    &__img{
-        width: 100%;
-        background-color: $mercury;
-        border-radius: 0.25rem;
-        border: 0;
+        @include tablet{
+            margin: 2rem 2.25rem;
+        }
+        
+        &__head{
+            margin: 1.5rem 0 1rem 0;
+            @include head-font-mobile;
+    
+            @include tablet{
+                @include head-font-tablet;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid $mercury;
+            }
+        }
+    
+        &__label{
+            font-size: 0.625rem;
+            font-weight: bold;
+            color: $silver;
+            margin-bottom: 0.25rem;
+    
+            @include tablet{
+                font-size: $label-tablet;
+                margin-top: 1.5rem;
+            }
+        }
+    
+        &__img{
+            width: 100%;
+            background-color: $mercury;
+            border-radius: 0.25rem;
+            border: 0;
+    
+            @include tablet{
+                max-width: 25rem;
+            }
+        }
     }
 }

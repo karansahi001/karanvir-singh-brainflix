@@ -5,7 +5,7 @@ import './Upload.scss'
 const Upload = () => {
   return (
     <>
-      <main>
+      <main className="upload">
         <section className="upload-hero">
           <h1 className="upload-hero__head">Upload Video</h1>
           <p className="upload-hero__label">VIDEO THUMBNAIL</p>
