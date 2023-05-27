@@ -1,14 +1,6 @@
 import './UploadForm.scss';
-import publish from '../../assets/images/icons/publish.svg'
 
 const UploadForm = () => {
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    alert("Upload Complete")
-    window.location.href = "/";
-
-  }
 
   return (
     <form className="upload-form">
@@ -29,13 +21,6 @@ const UploadForm = () => {
         rows="10"
         placeholder="Add a description to your video">
       </textarea>
-      <div className="upload-btns">
-        <i className="upload-btns__publish-icon">
-          <img src={publish} alt="upload" />
-        </i>
-        <button onClick={handleClick} type="submit" className="upload-btns__publish">PUBLISH</button>
-        <p className="upload-btns__cancel">CANCEL</p>
-      </div>
     </form>
   )
 }

@@ -1,52 +1,147 @@
 @use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *; 
+@use '../../styles/partials/variables' as *;
 
-header{ 
+header {
     border-bottom: 1px solid $mercury;
 }
 
-.upload{
-    display: flex;
-    justify-content: space-between;
-    &-hero{
+.upload-sec {
+
+    &__head {
+        margin: 1.5rem 1rem 1rem 1rem;
+        @include head-font-mobile;
+
+        @include tablet {
+            @include head-font-tablet;
+            padding-bottom: 1.5rem;
+            margin: 2rem 2.25rem;
+            border-bottom: 1px solid $mercury;
+        }
+
+        @include desktop {
+            margin: 2rem 9rem;
+        }
+    }
+}
+
+.upload {
+
+    @include desktop {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &-hero {
         margin: 1rem;
-    
-        @include tablet{
+
+        @include tablet {
             margin: 2rem 2.25rem;
         }
-        
-        &__head{
-            margin: 1.5rem 0 1rem 0;
-            @include head-font-mobile;
-    
-            @include tablet{
-                @include head-font-tablet;
-                padding-bottom: 1.5rem;
-                border-bottom: 1px solid $mercury;
-            }
+
+        @include desktop {
+            margin: 0 0 0 9rem;
         }
-    
-        &__label{
+
+        &__label {
             font-size: 0.625rem;
             font-weight: bold;
             color: $silver;
             margin-bottom: 0.25rem;
-    
-            @include tablet{
+
+            @include tablet {
                 font-size: $label-tablet;
                 margin-top: 1.5rem;
             }
+
+            @include desktop {
+                margin-top: 0;
+            }
         }
-    
-        &__img{
+
+        &__img {
             width: 100%;
             background-color: $mercury;
             border-radius: 0.25rem;
             border: 0;
-    
-            @include tablet{
+
+            @include tablet {
                 max-width: 25rem;
             }
+
+            @include desktop {
+                width: 25rem;
+            }
+        }
+    }
+
+}
+
+.upload-btns {
+    text-align: center;
+    margin: 0 1rem;
+
+    @include tablet {
+        border-top: 1px solid $mercury;
+        margin: 1.5rem 2.25rem;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    @include desktop {
+        margin: 1.5rem 9rem;
+    }
+
+    &__publish-icon {
+        position: absolute;
+        margin: 2rem 0 0 1rem;
+
+        @include tablet {
+            margin: 0.2rem 7.8rem 0 0;
+        }
+
+        @include desktop {
+            margin: 0.2rem 9.8rem 0 0;
+        }
+    }
+
+    &__publish {
+        font-size: $sub-head-font-mobile;
+        margin: 1.5rem 0 1rem 0;
+        height: 2.5rem;
+        width: 100%;
+        background-color: $blue;
+        border: 0;
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.75rem;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+
+        &:hover {
+            background-color: $darkblue;
+        }
+
+        @include tablet {
+            width: 10rem;
+            padding: 0 2rem;
+            margin: 0 0 0 1.5rem;
+        }
+
+        @include desktop {
+            margin: 0 1.8rem 0 1.6rem;
+        }
+    }
+
+    &__cancel {
+        font-size: $sub-head-font-mobile;
+        margin: 1rem 0 2rem 0;
+        font-weight: bold;
+        color: $blue;
+
+        @include tablet {
+            margin: 0 2.25rem 0 0;
         }
     }
 }
