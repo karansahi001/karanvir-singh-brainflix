@@ -11,7 +11,7 @@ const Upload = () => {
     alert(`Upload complete
           Title: ${e.target.title.value}
           Description: ${e.target.desc.value}`
-          )
+    )
     window.location.href = "/";
   }
 
@@ -24,7 +24,7 @@ const Upload = () => {
             <p className="upload-hero__label">VIDEO THUMBNAIL</p>
             <img className="upload-hero__img" src={uploadImage} alt="Upload video preview" />
           </section>
-          <UploadForm handleSubmit = {handleClick} />
+          <UploadForm handleSubmit={handleClick} />
         </section>
         <footer className="upload-btns">
           <i className="upload-btns__publish-icon">

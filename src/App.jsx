@@ -10,33 +10,38 @@ import axios from 'axios';
 function App() {
 
   const [videosList, setVideosList] = useState([]);
-  const [selectedId, setSelectedId] = useState("c05b9a93-8682-4ab6-aff2-92ebb4bbfc14");
-  // ("84e96018-4022-434e-80bf-000ce4cd12b8");
+  const [selectedId, setSelectedId] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
-
 
   const apiKey = "fff13bb4-110b-4db2-8522-81e36bd83ccf";
   const videosListUrl = `https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`;
-  const singleVideoUrl = `https://project-2-api.herokuapp.com/videos/${selectedId}?api_key=${apiKey}`;
 
   useEffect(() => {
     const fetchData = async () => {
        await axios.get(videosListUrl)
-        .then((res) => setVideosList(res.data))
+        .then((res) => {
+          return (
+            setVideosList(res.data)),
+            setSelectedId(res.data[0].id)
+        })
         .catch((err) => console.log(err))
     }
-
     fetchData();
   }, [videosListUrl])
 
   useEffect(() => {
-    const videoGet = () => {
-     axios.get(singleVideoUrl)
-      .then((res) => setSelectedVideo(res.data))
-      .catch((err) => console.log(err))
+    const videoGet = async () => {
+      selectedId.length > 0 ?
+      await axios.get(`https://project-2-api.herokuapp.com/videos/${selectedId}?api_key=${apiKey}`)
+        .then((res) => {
+          return setSelectedVideo(res.data)
+        }) 
+        .catch((err) => console.log(err))
+        : <></>
     }
     videoGet();
-  },[selectedId])
+  }, [selectedId, videosList])
+
 
   return (
     <>
@@ -46,29 +51,29 @@ function App() {
           <Route
             path="/"
             element={
-              <Homepage 
-                videosList={videosList} 
-                setVideosList={setVideosList} 
+              <Homepage
+                videosList={videosList}
                 selectedVideo={selectedVideo}
+                setSelectedId={setSelectedId}
+                selectedId={selectedId}
                 setSelectedVideo={setSelectedVideo}
-                />
+              />
             }>
           </Route>
-          <Route 
-            path="/upload" 
+          <Route
+            path="/upload"
             element={<Upload />}>
           </Route>
-          <Route 
-            path="/:video" 
+          <Route
+            path="/:video"
             element={
-              <SingleVideo 
-                videosList={videosList} 
-                setVideosList={setVideosList} 
+              <SingleVideo
+                videosList={videosList}
                 selectedVideo={selectedVideo}
-                setSelectedVideo={setSelectedVideo}
                 setSelectedId={setSelectedId}
+                selectedId={selectedId}
               />}
-              >
+          >
           </Route>
         </Routes>
       </BrowserRouter>

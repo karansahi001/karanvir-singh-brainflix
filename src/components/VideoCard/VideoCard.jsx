@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import './VideoCard.scss';
 
-const VideoCard = ({ id, image, title, name, handleClick }) => {
+const VideoCard = ({ id, image, title, name }) => {
 
   return (
     <NavLink className="video-link" to={`/${id}`}>
-      <article className="next-video"> {/*  onClick={() => handleClick(id)} */}
+      <article className="next-video">
         <div className="next-left">
           <img src={image} alt={title} className="next-left__image" />
         </div>

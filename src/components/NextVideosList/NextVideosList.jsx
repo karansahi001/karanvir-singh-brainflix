@@ -1,14 +1,7 @@
 import VideoCard from '../VideoCard/VideoCard';
 import './NextVideosList.scss';
 
-const NextVideosList = ({ videoDetails, setSelectedVideo, videosList, setVideosList }) => {
-
-  const handleClick = (videoId) => {
-    const selected = videoDetails.find((video) => video.id === videoId)
-    const updatedList = videoDetails.filter((video) => video.id !== selected.id)
-    setVideosList(updatedList);
-    setSelectedVideo(selected);
-  }
+const NextVideosList = ({ videosList }) => {
 
   return (
     <aside className="videos-list">
@@ -23,7 +16,6 @@ const NextVideosList = ({ videoDetails, setSelectedVideo, videosList, setVideosL
                   image={video.image}
                   title={video.title}
                   name={video.channel}
-                  handleClick={handleClick}
                 />
               </li>
             )
