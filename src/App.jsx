@@ -17,7 +17,6 @@ function App() {
   const [selectedId, setSelectedId] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-
   useEffect(() => {
     const fetchData = async () => {
       await axios.get(videosListUrl)
@@ -42,7 +41,6 @@ function App() {
     }
     videoGet();
   }, [selectedId, videosList])
-
 
   return (
     <>
