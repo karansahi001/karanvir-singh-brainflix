@@ -4,7 +4,7 @@ import avatar from '../../assets/images/Mohan-muruge.jpg'
 
 const CommentForm = () => {
     return (
-        <div className="comment-form">
+        <section className="comment-form">
             <div className="comments-sec">
                 <div className="comments-sec__profile">
                     <img className="profile__icon" src={avatar} alt="form profile avatar" />
@@ -26,7 +26,7 @@ const CommentForm = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

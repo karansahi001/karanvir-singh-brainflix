@@ -4,22 +4,25 @@ import './CommentSec.scss';
 
 const CommentSec = ({ selectedVideo }) => {
     return (
-        <div className="comment-sec">
+        <section className="comment-sec">
             <p className="comment-sec__count">{selectedVideo && selectedVideo.comments.length} Comments</p>
             <CommentForm />
-            {selectedVideo &&
-                selectedVideo.comments.map((comment) => {
-                    return (
-                        <Comment
-                            key={comment.id}
-                            name={comment.name}
-                            timestamp={comment.timestamp}
-                            description={comment.comment}
-                        />
-                    )
-                })
-            }
-        </div>
+            <ul className="comment-list">
+                {selectedVideo &&
+                    selectedVideo.comments.map((comment) => {
+                        return (
+                            <li className="comment-list__Item" key={comment.id}>
+                                <Comment
+                                    name={comment.name}
+                                    timestamp={comment.timestamp}
+                                    description={comment.comment}
+                                />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </section>
     )
 }
 

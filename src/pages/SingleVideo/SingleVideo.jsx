@@ -4,11 +4,18 @@ import CommentSec from '../../components/CommentSec/CommentSec';
 import NextVideosList from '../../components/NextVideosList/NextVideosList';
 import Video from '../../components/Video/Video';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { apiKey, videoSingleUrl } from '../../App';
 
-const SingleVideo = ({ videosList, selectedVideo, setSelectedId, selectedId }) => {
+const SingleVideo = ({ videosList, selectedVideo, setSelectedId, selectedId, setSelectedVideo }) => {
   const { video } = useParams();
 
   useEffect(() => {
+    const getData = async () => {
+      await axios.get(`${videoSingleUrl}${video}${apiKey}`)
+        .then((res) => setSelectedVideo(res.data))
+        .catch((err) => console.log(err))
+    }
     setSelectedId(video);
   }, [setSelectedId, video])
 

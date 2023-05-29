@@ -1,55 +1,55 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
-.nav{
+.nav {
 
     margin: 1rem;
     text-align: center;
 
-    @include tablet{
+    @include tablet {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    @include desktop{
+    @include desktop {
         margin: 1rem 8rem 1rem 8rem;
     }
 
-    &__logo{
+    &__logo {
         max-height: 1.563rem;
         max-width: 7.5rem;
         margin-bottom: 1rem;
 
-        @include tablet{
+        @include tablet {
             margin: 0 6.5rem 0 1rem;
         }
 
     }
 
-    &bar{
+    &bar {
         color: $black;
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 1rem;
         justify-content: space-between;
 
-        @include tablet{
+        @include tablet {
             width: auto;
             margin: 0;
 
         }
 
-        &__search-icon{
+        &__search-icon {
             position: absolute;
             margin: 0.6rem;
 
-            @include tablet{
+            @include tablet {
                 margin: 0.7rem;
             }
         }
 
-        &__search{
+        &__search {
             height: 2.25rem;
             width: 83%;
             border-radius: 0.25rem;
@@ -58,15 +58,15 @@
             border: 1px solid $mercury;
             background-color: $alabaster;
 
-            &:focus{
+            &:focus {
                 outline-color: $blue;
             }
 
-            &::placeholder{
+            &::placeholder {
                 color: $darkblack;
             }
 
-            @include tablet{
+            @include tablet {
                 width: 15rem;
                 height: 2.5rem;
                 padding: 1rem;
@@ -75,37 +75,37 @@
 
         }
 
-        &__avatar{
+        &__avatar {
             width: 2.25rem;
-            object-fit:cover;
+            object-fit: cover;
             object-position: 20% 80%;
             border-radius: 50%;
 
-            @include tablet{
+            @include tablet {
                 display: none;
             }
         }
 
-        .nav-sec{
+        .nav-sec {
             width: 100%;
             margin-top: 1rem;
 
-            @include tablet{
+            @include tablet {
                 width: auto;
                 margin: 0;
                 display: flex;
             }
-            
-            &__upload-icon{
+
+            &__upload-icon {
                 position: absolute;
                 margin: 0.55rem;
-        
-                @include tablet{
+
+                @include tablet {
                     margin-left: 2rem;
                 }
             }
-        
-            &__upload-btn{
+
+            &__upload-btn {
                 height: 2.5rem;
                 width: 100%;
                 background-color: $blue;
@@ -115,30 +115,30 @@
                 padding: 0.75rem;
                 -webkit-text-stroke-width: 1px;
                 -webkit-text-stroke-color: white;
-        
-                &:hover{
+
+                &:hover {
                     background-color: $darkblue;
                 }
-        
-                @include tablet{
+
+                @include tablet {
                     width: 9.375rem;
                     margin: 0 1.5rem;
                 }
 
-                @include desktop{
+                @include desktop {
                     margin: 0 1.8rem 0 1.6rem;
                 }
-                
+
             }
-        
-            &__avatar--tablet{
+
+            &__avatar--tablet {
                 display: none;
-        
-                @include tablet{
+
+                @include tablet {
                     width: 2.5rem;
                     height: 2.5rem;
                     margin-right: 1rem;
-                    object-fit:cover;
+                    object-fit: cover;
                     object-position: 20% 80%;
                     border-radius: 50%;
                     display: flex;

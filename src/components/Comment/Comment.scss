@@ -9,13 +9,13 @@
     display: flex;
     @include mobile-body-font;
 
-    @include tablet{
+    @include tablet {
         margin: 0 2.25rem;
         padding: 1.5rem 0;
         @include tablet-body-font;
     }
 
-    @include desktop{
+    @include desktop {
         margin: 0 0 0 2.25rem;
         padding-right: 1rem;
     }
@@ -61,7 +61,7 @@
     &:last-child {
         border-bottom: 1px solid $mercury;
 
-        @include desktop{
+        @include desktop {
             border-bottom: 0;
         }
     }
