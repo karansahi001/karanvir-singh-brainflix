@@ -5,9 +5,9 @@ import './CommentSec.scss';
 const CommentSec = ({ selectedVideo }) => {
   return (
     <div className="comment-sec">
-        <p className="comment-sec__count">{selectedVideo.comments.length} Comments</p>
+        <p className="comment-sec__count">{selectedVideo && selectedVideo.comments.length} Comments</p>
         <CommentForm />
-        {
+        {   selectedVideo &&
             selectedVideo.comments.map((comment) => {
                 return (
                     <Comment 

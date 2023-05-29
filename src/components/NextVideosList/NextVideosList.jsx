@@ -11,23 +11,26 @@ const NextVideosList = ({ videoDetails, setSelectedVideo, videosList, setVideosL
   }
 
   return (
-    <div className="videos-list">
-        <p className="videos-list__head">NEXT VIDEOS</p>
+    <aside className="videos-list">
+      <p className="videos-list__head">NEXT VIDEOS</p>
+      <ul className="next-videos">
         {
-            videosList.map((video) => {
-               return(
-                   <VideoCard 
-                        key={video.id} 
-                        id={video.id}
-                        image= {video.image} 
-                        title= {video.title} 
-                        name= {video.channel} 
-                        handleClick = { handleClick }
-                    />
-               ) 
-            })
+          videosList.map((video) => {
+            return (
+              <li key={video.id} className="next-videos__item">
+                <VideoCard
+                  id={video.id}
+                  image={video.image}
+                  title={video.title}
+                  name={video.channel}
+                  handleClick={handleClick}
+                />
+              </li>
+            )
+          })
         }
-    </div>
+      </ul>
+    </aside>
   )
 }
 

@@ -1,4 +1,3 @@
-import videos from '../../data/videos.json';
 import videoDetails from '../../data/video-details.json';
 import Hero from '../../components/Hero/Hero';
 import CommentSec from '../../components/CommentSec/CommentSec';
@@ -6,15 +5,14 @@ import NextVideosList from '../../components/NextVideosList/NextVideosList';
 import Video from '../../components/Video/Video';
 import { useState } from 'react';
 
-const Homepage = () => {
+const Homepage = ({ videosList, setVideosList, selectedVideo, setSelectedVideo }) => {
 
-    const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-    const [videosList, setVideosList] = useState(videos.slice(1));
+    // const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
 
     return (
         <>
             <Video selectedVideo={selectedVideo} />
-            <div className="main">
+            <main className="main">
                 <section className="main__left">
                     <Hero selectedVideo={selectedVideo} />
                     <CommentSec selectedVideo={selectedVideo} />
@@ -27,7 +25,7 @@ const Homepage = () => {
                         videoDetails={videoDetails}
                     />
                 </section>
-            </div>
+            </main>
         </>
     )
 }
