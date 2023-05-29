@@ -1,6 +1,11 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+.comment-list{
+    list-style-type: none;
+    padding: 0;
+}
+
 .comment-sec{
     
     &__count{
@@ -19,8 +24,5 @@
     }
 }
 
-.comment-list{
-    list-style-type: none;
-    padding: 0;
-}
+
 

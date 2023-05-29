@@ -57,7 +57,6 @@ function App() {
                 selectedVideo={selectedVideo}
                 setSelectedId={setSelectedId}
                 selectedId={selectedId}
-                setSelectedVideo={setSelectedVideo}
               />
             }>
           </Route>
@@ -72,7 +71,6 @@ function App() {
                 videosList={videosList}
                 selectedVideo={selectedVideo}
                 setSelectedId={setSelectedId}
-                selectedId={selectedId}
                 setSelectedVideo={setSelectedVideo}
               />}
           >

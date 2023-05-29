@@ -6,8 +6,9 @@ import Video from '../../components/Video/Video';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { apiKey, videoSingleUrl } from '../../App';
+import './SingleVideo.scss'
 
-const SingleVideo = ({ videosList, selectedVideo, setSelectedId, selectedId, setSelectedVideo }) => {
+const SingleVideo = ({ videosList, selectedVideo, setSelectedId, setSelectedVideo }) => {
   const { video } = useParams();
 
   useEffect(() => {

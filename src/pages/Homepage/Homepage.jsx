@@ -5,6 +5,7 @@ import Video from '../../components/Video/Video';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { apiKey, videosListUrl } from '../../App';
+import './Homepage.scss'
 
 const Homepage = ({ videosList, selectedVideo, setSelectedId, selectedId }) => {
 
