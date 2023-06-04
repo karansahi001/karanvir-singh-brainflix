@@ -7,9 +7,8 @@ import Header from './components/Header/Header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const apiKey = "fff13bb4-110b-4db2-8522-81e36bd83ccf";
-export const videosListUrl = `https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`;
-export const videoSingleUrl = `https://project-2-api.herokuapp.com/videos/`
+export const videosListUrl = `http://localhost:8080/videos/`;
+export const videoSingleUrl = `http://localhost:8080/videos/`
 
 function App() {
 
@@ -32,7 +31,7 @@ function App() {
   useEffect(() => {
     const videoGet = async () => {
       selectedId.length > 0 ?
-        await axios.get(`${videoSingleUrl}${selectedId}?api_key=${apiKey}`)
+        await axios.get(`${videoSingleUrl}${selectedId}`)
           .then((res) => {
             return setSelectedVideo(res.data)
           })

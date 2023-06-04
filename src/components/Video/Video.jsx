@@ -1,6 +1,7 @@
 import './Video.scss'
 
 const Video = ({ selectedVideo }) => {
+   
     return (
         <section className="hero__video">
             <video className="video" poster={selectedVideo && selectedVideo.image} controls>

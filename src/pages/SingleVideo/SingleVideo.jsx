@@ -5,7 +5,7 @@ import NextVideosList from '../../components/NextVideosList/NextVideosList';
 import Video from '../../components/Video/Video';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { apiKey, videoSingleUrl } from '../../App';
+import { videoSingleUrl } from '../../App';
 import './SingleVideo.scss'
 
 const SingleVideo = ({ videosList, selectedVideo, setSelectedId, setSelectedVideo }) => {
@@ -13,12 +13,12 @@ const SingleVideo = ({ videosList, selectedVideo, setSelectedId, setSelectedVide
 
   useEffect(() => {
     const getData = async () => {
-      await axios.get(`${videoSingleUrl}${video}${apiKey}`)
+      await axios.get(`${videoSingleUrl}${video}`)
         .then((res) => setSelectedVideo(res.data))
         .catch((err) => console.log(err))
     }
     setSelectedId(video);
-  }, [setSelectedId, video])
+  }, [setSelectedVideo, setSelectedId, video])
 
   const filteredList = videosList.filter(item => item.id !== video);
 
