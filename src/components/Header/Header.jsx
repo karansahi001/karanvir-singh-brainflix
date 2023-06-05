@@ -1,9 +1,9 @@
-import './Header.scss'
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/images/logo/BrainFlix-logo.svg'
 import upload from '../../assets/images/icons/upload.svg'
 import search from '../../assets/images/icons/search.svg'
 import avatar from '../../assets/images/Mohan-muruge.jpg'
-import { NavLink } from 'react-router-dom'
+import './Header.scss'
 
 const Header = () => {
   return (

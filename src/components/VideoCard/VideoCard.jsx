@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './VideoCard.scss';
 
 const VideoCard = ({ id, image, title, name }) => {
 
   return (
-    <NavLink className="video-link" to={`/${id}`}>
+    <Link className="video-link" to={`/${id}`}>
       <article className="next-video">
         <div className="next-left">
           <img src={image} alt={title} className="next-left__image" />
@@ -16,7 +16,7 @@ const VideoCard = ({ id, image, title, name }) => {
           <p className="next-right__name">{name}</p>
         </div>
       </article>
-    </NavLink>
+    </Link>
   )
 }
 

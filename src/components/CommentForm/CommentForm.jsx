@@ -1,6 +1,6 @@
-import './CommentForm.scss'
 import commentIcon from '../../assets/images/icons/add_comment.svg'
 import avatar from '../../assets/images/Mohan-muruge.jpg'
+import './CommentForm.scss'
 
 const CommentForm = () => {
   return (

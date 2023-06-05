@@ -1,5 +1,5 @@
-import './Comment.scss';
 import { dateFormat } from '../VideoInfo/VideoInfo';
+import './Comment.scss';
 
 const Comment = ({ name, timestamp, description }) => {
   return (
