@@ -4,25 +4,43 @@ import NextVideosList from '../../components/NextVideosList/NextVideosList';
 import Video from '../../components/Video/Video';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { apiKey, videosListUrl } from '../../App';
+import { videoSingleUrl, videosListUrl } from '../../App';
 import './Homepage.scss'
+import { useParams } from 'react-router-dom';
 
-const Homepage = ({ videosList, selectedVideo, setSelectedId, selectedId }) => {
+const Homepage = ({ videosList, selectedVideo, setSelectedId, selectedId, setSelectedVideo }) => {
+
+    const { video } = useParams();
 
     useEffect(() => {
-        const defaultData = async () => {
-            await axios.get(videosListUrl)
-                .then((res) => setSelectedId(res.data[0].id))
-                .catch((err) => console.log(err))
+        if (video) {
+            const getData = async () => {
+                await axios.get(`${videoSingleUrl}${video}`)
+                    .then((res) => setSelectedVideo(res.data))
+                    .catch((err) => console.log(err))
+            }
+            setSelectedId(video)
         }
-        defaultData();
-    }, [setSelectedId, videosListUrl])
+        else {
+            const defaultData = () => {
+                axios.get(videosListUrl)
+                    .then((res) => setSelectedId(res.data[0].id))
+                    .catch((err) => console.log(err))
+            }
+            defaultData()
+        }
+
+    }, [setSelectedVideo, setSelectedId, video])
 
     const filteredList = videosList.filter(item => item.id !== selectedId);
 
     return (
         <>
-            <Video selectedVideo={selectedVideo} />
+            {selectedVideo
+                ?
+                <Video selectedVideo={selectedVideo} />
+                :
+                <p>Loading...</p>}
             <main className="main">
                 <section className="main__left">
                     <Hero selectedVideo={selectedVideo} />
@@ -35,6 +53,7 @@ const Homepage = ({ videosList, selectedVideo, setSelectedId, selectedId }) => {
                 </section>
             </main>
         </>
+
     )
 }
 

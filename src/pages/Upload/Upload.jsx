@@ -3,15 +3,17 @@ import UploadForm from '../../components/UploadForm/UploadForm';
 import publish from '../../assets/images/icons/publish.svg'
 import './Upload.scss'
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { videosListUrl } from '../../App';
 
 const Upload = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    alert(`Upload complete
-          Title: ${e.target.title.value}
-          Description: ${e.target.desc.value}`
-    )
+    axios.post(videosListUrl, {title: e.target.title.value, description: e.target.desc.value})
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+
     window.location.href = "/";
   }
 
