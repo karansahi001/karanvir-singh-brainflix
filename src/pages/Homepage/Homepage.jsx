@@ -10,49 +10,48 @@ import { useParams } from 'react-router-dom';
 
 const Homepage = ({ videosList, selectedVideo, setSelectedId, selectedId, setSelectedVideo }) => {
 
-    const { video } = useParams();
-
-    useEffect(() => {
-        if (video) {
-            const getData = async () => {
-                await axios.get(`${videoSingleUrl}${video}`)
-                    .then((res) => setSelectedVideo(res.data))
-                    .catch((err) => console.log(err))
-            }
-            setSelectedId(video)
-        }
-        else {
-            const defaultData = () => {
-                axios.get(videosListUrl)
-                    .then((res) => setSelectedId(res.data[0].id))
-                    .catch((err) => console.log(err))
-            }
-            defaultData()
+  const { video } = useParams();
+  
+  useEffect(() => {
+    if (video) {
+      const getData = async () => {
+        await axios.get(`${videoSingleUrl}${video}`)
+            .then((res) => setSelectedVideo(res.data))
+            .catch((err) => console.log(err))
+      }
+        setSelectedId(video)
+      } else {
+          const defaultData = () => {
+            axios.get(videosListUrl)
+            .then((res) => setSelectedId(res.data[0].id))
+            .catch((err) => console.log(err))
+          }
+          defaultData()
         }
 
     }, [setSelectedVideo, setSelectedId, video])
 
-    const filteredList = videosList.filter(item => item.id !== selectedId);
+  const filteredList = videosList.filter(item => item.id !== selectedId);
 
-    return (
-        <>
-            {selectedVideo
-                ?
-                <Video selectedVideo={selectedVideo} />
-                :
-                <p>Loading...</p>}
-            <main className="main">
-                <section className="main__left">
-                    <Hero selectedVideo={selectedVideo} />
-                    <CommentSec selectedVideo={selectedVideo} />
-                </section>
-                <section className="main__right">
-                    <NextVideosList
-                        videosList={filteredList}
-                    />
-                </section>
-            </main>
-        </>
+  return (
+    <>
+        {selectedVideo
+            ?
+            <Video selectedVideo={selectedVideo} />
+            :
+            <p>Loading...</p>}
+        <main className="main">
+            <section className="main__left">
+                <Hero selectedVideo={selectedVideo} />
+                <CommentSec selectedVideo={selectedVideo} />
+            </section>
+            <section className="main__right">
+                <NextVideosList
+                    videosList={filteredList}
+                />
+            </section>
+        </main>
+    </>
 
     )
 }
